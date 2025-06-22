@@ -8,8 +8,8 @@ namespace Student_Management_System.Data
         public static void CreateTable()
         {
             using (var getDbconn = DatabaseManager.GetConnection())
-            {
-                getDbconn.Open();
+            {                                       
+              
 
                 string[] createTableCommands = new string[]
                 {
@@ -42,7 +42,7 @@ namespace Student_Management_System.Data
                         UserName TEXT NOT NULL,
                         Password TEXT NOT NULL
                     );",
-
+                    
                     @"CREATE TABLE IF NOT EXISTS Staffs (
                         StaffID INTEGER PRIMARY KEY AUTOINCREMENT,
                         StaffName TEXT NOT NULL,

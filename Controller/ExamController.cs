@@ -15,7 +15,7 @@ namespace Student_Management_System.Controller
         public ExamController(string connectionString)
         {
             _connectionString = connectionString;
-        }
+        }           
 
         public List<Exam> GetAllExams()
         {

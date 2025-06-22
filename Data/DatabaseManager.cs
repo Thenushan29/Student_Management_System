@@ -16,7 +16,7 @@ namespace Student_Management_System.Data
             var conn = new SQLiteConnection(connectionString);  
             conn.Open();
             return conn;
-            
+           
         }
 
     }
