@@ -36,6 +36,8 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.comboBoxRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -44,6 +46,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(206, 20);
             this.txtUserName.TabIndex = 0;
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -70,11 +73,12 @@
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(53, 76);
+            this.lblUserName.Location = new System.Drawing.Point(53, 64);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(57, 13);
             this.lblUserName.TabIndex = 4;
@@ -89,11 +93,31 @@
             this.lblPassword.TabIndex = 4;
             this.lblPassword.Text = "Password";
             // 
+            // lblRole
+            // 
+            this.lblRole.AutoSize = true;
+            this.lblRole.Location = new System.Drawing.Point(81, 33);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(29, 13);
+            this.lblRole.TabIndex = 5;
+            this.lblRole.Text = "Role";
+            // 
+            // comboBoxRole
+            // 
+            this.comboBoxRole.FormattingEnabled = true;
+            this.comboBoxRole.Location = new System.Drawing.Point(160, 25);
+            this.comboBoxRole.Name = "comboBoxRole";
+            this.comboBoxRole.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxRole.TabIndex = 6;
+            this.comboBoxRole.SelectedIndexChanged += new System.EventHandler(this.comboBoxRole_SelectedIndexChanged);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 279);
+            this.Controls.Add(this.comboBoxRole);
+            this.Controls.Add(this.lblRole);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.btnLogin);
@@ -101,6 +125,7 @@
             this.Controls.Add(this.txtUserName);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,5 +140,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblRole;
+        private System.Windows.Forms.ComboBox comboBoxRole;
     }
 }

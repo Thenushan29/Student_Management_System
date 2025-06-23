@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Student_Management_System.Model;
+using System;
 using System.Data.SQLite;
+using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Student_Management_System.Data
 {
@@ -13,6 +16,15 @@ namespace Student_Management_System.Data
 
                 string[] createTableCommands = new string[]
                 {
+
+                    
+
+
+
+
+
+
+
                     @"CREATE TABLE IF NOT EXISTS Students (
                         StudentID INTEGER PRIMARY KEY AUTOINCREMENT,
                         StudentName TEXT NOT NULL,
@@ -43,7 +55,7 @@ namespace Student_Management_System.Data
                         Password TEXT NOT NULL
                     );",
                     
-                    @"CREATE TABLE IF NOT EXISTS Staffs (
+                @"CREATE TABLE IF NOT EXISTS Staffs (
                         StaffID INTEGER PRIMARY KEY AUTOINCREMENT,
                         StaffName TEXT NOT NULL,
                         PhoneNumber TEXT NOT NULL,
@@ -77,8 +89,27 @@ namespace Student_Management_System.Data
                         FOREIGN KEY (CourseID) REFERENCES Courses(CourseID),
                         FOREIGN KEY (SubjectID) REFERENCES Subjects(SubjectID),
                         FOREIGN KEY (StudentID) REFERENCES Students(StudentID)
-                    );"
-                };
+                    );",
+                    @"CREATE TABLE IF NOT EXISTS Rooms (
+                            RoomID INTEGER PRIMARY KEY AUTOINCREMENT,
+                            RoomName TEXT NOT NULL,
+                            RoomType TEXT NOT NULL
+                        );"
+                ,
+
+                                @"CREATE TABLE IF NOT EXISTS Timetable (
+                                        TimetableID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                        RoomID INTEGER,
+                                        SubjectID INTEGER,
+                                        Date TEXT NOT NULL,
+                                        Time TEXT NOT NULL,
+                                        FOREIGN KEY (RoomID) REFERENCES Rooms(RoomID),
+                                        FOREIGN KEY (SubjectID) REFERENCES Subjects(SubjectID)
+
+                       );",
+
+
+            };
 
                 foreach (var cmdText in createTableCommands)
                 {

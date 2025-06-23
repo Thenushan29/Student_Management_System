@@ -134,6 +134,7 @@
             this.btnAddTimetable.TabIndex = 3;
             this.btnAddTimetable.Text = "Add";
             this.btnAddTimetable.UseVisualStyleBackColor = true;
+            this.btnAddTimetable.Click += new System.EventHandler(this.btnAddTimetable_Click);
             // 
             // comboBoxSubject
             // 
@@ -142,6 +143,7 @@
             this.comboBoxSubject.Name = "comboBoxSubject";
             this.comboBoxSubject.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSubject.TabIndex = 4;
+            this.comboBoxSubject.SelectedIndexChanged += new System.EventHandler(this.comboBoxSubject_SelectedIndexChanged);
             // 
             // TimetableForm
             // 
@@ -162,6 +164,7 @@
             this.Controls.Add(this.dataGridViewTimetable);
             this.Name = "TimetableForm";
             this.Text = "TimetableForm";
+            this.Load += new System.EventHandler(this.TimetableForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimetable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

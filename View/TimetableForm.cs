@@ -15,9 +15,28 @@ namespace Student_Management_System.View
         public TimetableForm()
         {
             InitializeComponent();
+            comboBoxSubject.Items.Clear();
+            comboBoxSubject.Items.Add("");
+
+
         }
 
         private void Text_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimetableForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddTimetable_Click(object sender, EventArgs e)
         {
 
         }

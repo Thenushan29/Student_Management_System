@@ -9,5 +9,12 @@ namespace Student_Management_System.Model
     internal class Room
     {
          
+        
+            public int RoomID { get; set; }             
+            public string RoomName { get; set; }      
+            public string RoomType { get; set; }       
+        
     }
+
 }
+

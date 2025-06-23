@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Student_Management_System.View
 {
-    public partial class DashboardForm : Form
+    public partial class TimetableViewForm : Form
     {
-        public DashboardForm()
+        public TimetableViewForm()
         {
             InitializeComponent();
-        }
-
-        private void DashboardForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

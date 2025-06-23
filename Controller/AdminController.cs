@@ -33,6 +33,46 @@ namespace Student_Management_System.Controller
             }
         }
 
+
+        // Seed a default hardcoded admin (call this once on startup)
+        public void SeedDefaultAdmin()
+        {
+            string fixedUserName = "admin";
+            string fixedPassword = "admin123"; // WARNING: Do not store plain passwords in production
+
+            string checkQuery = "SELECT COUNT(*) FROM Admins WHERE UserName = @UserName";
+            using (var checkCmd = new SQLiteCommand(checkQuery, connection))
+            {
+                checkCmd.Parameters.AddWithValue("@UserName", fixedUserName);
+                long count = (long)checkCmd.ExecuteScalar();
+
+                if (count == 0)
+                {
+                    string insertQuery = @"
+                INSERT INTO Admins (AdminName, UserName, Password, PhoneNumber, Address)
+                VALUES (@AdminName, @UserName, @Password, @PhoneNumber, @Address)";
+
+                    using (var insertCmd = new SQLiteCommand(insertQuery, connection))
+                    {
+                        insertCmd.Parameters.AddWithValue("@AdminName", "Default Admin");
+                        insertCmd.Parameters.AddWithValue("@UserName", fixedUserName);
+                        insertCmd.Parameters.AddWithValue("@Password", fixedPassword);
+                        insertCmd.Parameters.AddWithValue("@PhoneNumber", "0000000000");
+                        insertCmd.Parameters.AddWithValue("@Address", "Admin Address");
+
+                        insertCmd.ExecuteNonQuery();
+                        Console.WriteLine("Default admin added.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Default admin already exists.");
+                }
+            }
+        }
+
+
+
         // Update existing Admin
         public void UpdateAdmin(Admin admin)
         {
@@ -47,7 +87,7 @@ namespace Student_Management_System.Controller
                     AdminName = @AdminName,
                     UserName = @UserName,
                     Password = @Password,
-                    PhoneNumber = @PhoneNumber,
+                    PhoneNumber = @PhoneNumber,SSSSSS
                     Address = @Address
                 WHERE AdminID = @AdminID";
 

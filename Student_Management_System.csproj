@@ -93,23 +93,35 @@
     <Compile Include="View\CourseForm.Designer.cs">
       <DependentUpon>CourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CourseViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CourseViewForm.Designer.cs">
+      <DependentUpon>CourseViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\CreateForm.Designer.cs">
       <DependentUpon>CreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DashboardForm.cs">
+    <Compile Include="View\AdminDashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\DashboardForm.Designer.cs">
-      <DependentUpon>DashboardForm.cs</DependentUpon>
+    <Compile Include="View\AdminDashboardForm.Designer.cs">
+      <DependentUpon>AdminDashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ExamForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ExamForm.Designer.cs">
       <DependentUpon>ExamForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExamViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ExamViewForm.Designer.cs">
+      <DependentUpon>ExamViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
@@ -123,11 +135,29 @@
     <Compile Include="View\MarksForm.Designer.cs">
       <DependentUpon>MarksForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\StudentForm.cs">
+    <Compile Include="View\MarksViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\StudentForm.Designer.cs">
-      <DependentUpon>StudentForm.cs</DependentUpon>
+    <Compile Include="View\MarksViewForm.Designer.cs">
+      <DependentUpon>MarksViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RoomForm.Designer.cs">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StaffDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StaffDashboardForm.Designer.cs">
+      <DependentUpon>StaffDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudentDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StudentDashboardForm.Designer.cs">
+      <DependentUpon>StudentDashboardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SubjectForm.cs">
       <SubType>Form</SubType>
@@ -135,11 +165,23 @@
     <Compile Include="View\SubjectForm.Designer.cs">
       <DependentUpon>SubjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SubjectViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SubjectViewForm.Designer.cs">
+      <DependentUpon>SubjectViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TimetableForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\TimetableForm.Designer.cs">
       <DependentUpon>TimetableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TimetableViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TimetableViewForm.Designer.cs">
+      <DependentUpon>TimetableViewForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -152,14 +194,20 @@
     <EmbeddedResource Include="View\CourseForm.resx">
       <DependentUpon>CourseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CourseViewForm.resx">
+      <DependentUpon>CourseViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CreateForm.resx">
       <DependentUpon>CreateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DashboardForm.resx">
-      <DependentUpon>DashboardForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\AdminDashboardForm.resx">
+      <DependentUpon>AdminDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ExamForm.resx">
       <DependentUpon>ExamForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ExamViewForm.resx">
+      <DependentUpon>ExamViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -167,14 +215,29 @@
     <EmbeddedResource Include="View\MarksForm.resx">
       <DependentUpon>MarksForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\StudentForm.resx">
-      <DependentUpon>StudentForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\MarksViewForm.resx">
+      <DependentUpon>MarksViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RoomForm.resx">
+      <DependentUpon>RoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StaffDashboardForm.resx">
+      <DependentUpon>StaffDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StudentDashboardForm.resx">
+      <DependentUpon>StudentDashboardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SubjectForm.resx">
       <DependentUpon>SubjectForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SubjectViewForm.resx">
+      <DependentUpon>SubjectViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\TimetableForm.resx">
       <DependentUpon>TimetableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TimetableViewForm.resx">
+      <DependentUpon>TimetableViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
