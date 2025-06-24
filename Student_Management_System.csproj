@@ -59,6 +59,7 @@
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\MarkController.cs" />
     <Compile Include="Controller\MarksController.cs" />
+    <Compile Include="Controller\RoleController.cs" />
     <Compile Include="Controller\StaffController.cs" />
     <Compile Include="Controller\StudentController.cs" />
     <Compile Include="Controller\SubjectController.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Model\Exam.cs" />
     <Compile Include="Model\Lecturer.cs" />
     <Compile Include="Model\Mark.cs" />
+    <Compile Include="Model\Role.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\Staff.cs" />
     <Compile Include="Model\Student.cs" />
@@ -129,11 +131,11 @@
     <Compile Include="View\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MarksForm.cs">
+    <Compile Include="View\MarksAddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MarksForm.Designer.cs">
-      <DependentUpon>MarksForm.cs</DependentUpon>
+    <Compile Include="View\MarksAddForm.Designer.cs">
+      <DependentUpon>MarksAddForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MarksViewForm.cs">
       <SubType>Form</SubType>
@@ -152,6 +154,12 @@
     </Compile>
     <Compile Include="View\StaffDashboardForm.Designer.cs">
       <DependentUpon>StaffDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\StudentCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\StudentCreateForm.Designer.cs">
+      <DependentUpon>StudentCreateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\StudentDashboardForm.cs">
       <SubType>Form</SubType>
@@ -212,8 +220,8 @@
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MarksForm.resx">
-      <DependentUpon>MarksForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\MarksAddForm.resx">
+      <DependentUpon>MarksAddForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MarksViewForm.resx">
       <DependentUpon>MarksViewForm.cs</DependentUpon>
@@ -223,6 +231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\StaffDashboardForm.resx">
       <DependentUpon>StaffDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\StudentCreateForm.resx">
+      <DependentUpon>StudentCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\StudentDashboardForm.resx">
       <DependentUpon>StudentDashboardForm.cs</DependentUpon>

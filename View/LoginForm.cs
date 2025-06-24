@@ -10,13 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Student_Management_System.View
 {
     public partial class LoginForm : Form
     {
+        private LoginController loginController;
+
         public LoginForm()
         {
             InitializeComponent();
+
             comboBoxRole.Items.Clear();
             comboBoxRole.Items.Add("Admin");
             comboBoxRole.Items.Add("Student");
@@ -28,106 +32,66 @@ namespace Student_Management_System.View
                 comboBoxRole.SelectedIndex = 0;
             }
 
+            var connection = new SQLiteConnection("Data Source=student_management.db;Version=3;");
+            connection.Open();
+            loginController = new LoginController(connection);
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            
+            // Optional: Any initialization logic
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
-                try
-                {
-                    // Get the username and password from the text boxes
-                    string username = txtUserName.Text.Trim();
-                    string password = txtPassword.Text;
+            string username = txtUserName.Text.Trim();
+            string password = txtPassword.Text;
 
-                    // Validate inputs
-                    if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                    {
-                        MessageBox.Show("Please enter both username and password.", "Validation Error",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter both username and password." );
+                return;
+            }
 
-                    // Authenticate user using the LoginController
-                    var (role, user) =LoginController.AuthenticateUser(username, password);
+            var (role, user) = loginController.AuthenticateUser(username, password);
 
-                    if (role != LoginController.UserRole.None && user != null)
-                    {
-                        // Store user info in a static class for session management
-                        CurrentUser.Role = role;
-                        CurrentUser.UserObject = user;
+            switch (role)
+            {
+                case LoginController.UserRole.Admin:
+                    AdminDashboardForm adminDashboardForm = new AdminDashboardForm();
+                    adminDashboardForm.ShowDialog();
 
-                        // Hide the login form
-                        this.Hide();
+                    break;
 
-                        // Open the appropriate form based on user role
-                        switch (role)
-                        {
-                            case LoginController.UserRole.Admin:
-                                var adminForm = new AdminDashboardForm();
-                                adminForm.Show();
-                                break;
-                            case LoginController.UserRole.Staff:
-                            var staffForm = new StaffDashboardForm();
-                                staffForm.Show();
-                                break;
-                            case LoginController.UserRole.Lecturer:
-                                var lecturerForm = new StaffDashboardForm();
-                                lecturerForm.Show();
-                                break;
-                            case LoginController.UserRole.Student:
-                                var studentForm = new StudentDashboardForm();
-                           
-                                studentForm.Show();
-                                break;
-                        }
-                    }
-                    else
-                    {
-                        // Show error message for invalid credentials
-                        MessageBox.Show("Invalid username or password. Please try again.",
-                                        "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txtPassword.Clear();
-                        txtUserName.Focus();
-                    }
-                }
-                catch (SQLiteException ex)
-                {
-                    // Handle database-related errors
-                    MessageBox.Show($"Database error: {ex.Message}", "Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch (Exception ex)
-                {
-                    // Handle any other errors
-                    MessageBox.Show($"An error occurred: {ex.Message}", "Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            
+                case LoginController.UserRole.Staff:
+                    StaffDashboardForm staffDashboardForm = new StaffDashboardForm();
+                    staffDashboardForm.ShowDialog();
+                    break;
 
+                case LoginController.UserRole.Lecturer:
+                    StaffDashboardForm staffDashboard = new StaffDashboardForm();
+                    staffDashboard.ShowDialog();
+                    break;
 
+                case LoginController.UserRole.Student:
+                    StudentDashboardForm studentDashboardForm = new StudentDashboardForm();
+                    studentDashboardForm.ShowDialog();
+                    break;
 
-
-
-            this.Hide();
-            AdminDashboardForm dashboardForm = new AdminDashboardForm();
-            dashboardForm.Show();
-
+                case LoginController.UserRole.None:
+                    MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
         }
 
         private void txtUserName_TextChanged(object sender, EventArgs e)
         {
-
-        } 
-                                              
+            // Optional: Real-time validation or suggestions
+        }
 
         private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // Optional: Handle role-specific behavior here
         }
     }
 }

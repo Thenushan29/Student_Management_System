@@ -70,6 +70,7 @@
             this.btnAddCourse.TabIndex = 5;
             this.btnAddCourse.Text = "Add";
             this.btnAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
             // btnUpdateCourse
             // 
@@ -79,6 +80,7 @@
             this.btnUpdateCourse.TabIndex = 5;
             this.btnUpdateCourse.Text = "Update";
             this.btnUpdateCourse.UseVisualStyleBackColor = true;
+            this.btnUpdateCourse.Click += new System.EventHandler(this.btnUpdateCourse_Click);
             // 
             // btnDeleteCourse
             // 
@@ -88,6 +90,7 @@
             this.btnDeleteCourse.TabIndex = 5;
             this.btnDeleteCourse.Text = "Delete";
             this.btnDeleteCourse.UseVisualStyleBackColor = true;
+            this.btnDeleteCourse.Click += new System.EventHandler(this.btnDeleteCourse_Click);
             // 
             // CourseForm
             // 
@@ -102,6 +105,7 @@
             this.Controls.Add(this.dataGridViewCourse);
             this.Name = "CourseForm";
             this.Text = "CourseForm";
+            this.Load += new System.EventHandler(this.CourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

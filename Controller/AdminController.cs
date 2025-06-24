@@ -142,7 +142,7 @@ namespace Student_Management_System.Controller
                     }
                 }
             }
-            return null; // Not found
+            return null; 
         }
 
         // Get all Admins

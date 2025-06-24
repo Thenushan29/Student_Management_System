@@ -1,7 +1,11 @@
 ﻿using Student_Management_System.Model;
 using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Net;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Student_Management_System.Data
@@ -11,13 +15,13 @@ namespace Student_Management_System.Data
         public static void CreateTable()
         {
             using (var getDbconn = DatabaseManager.GetConnection())
-            {                                       
-              
+            {
+
 
                 string[] createTableCommands = new string[]
                 {
 
-                    
+
 
 
 
@@ -53,8 +57,13 @@ namespace Student_Management_System.Data
                         Address TEXT NOT NULL,
                         UserName TEXT NOT NULL,
                         Password TEXT NOT NULL
-                    );",
-                    
+                    );"
+                ,
+
+                    @"INSERT INTO Admins (AdminName, UserName, Password, PhoneNumber, Address)
+                    VALUES ('Admin One', 'admin', 'admin123', '1234567890', 'Admin Address');",
+
+
                 @"CREATE TABLE IF NOT EXISTS Staffs (
                         StaffID INTEGER PRIMARY KEY AUTOINCREMENT,
                         StaffName TEXT NOT NULL,
@@ -97,16 +106,29 @@ namespace Student_Management_System.Data
                         );"
                 ,
 
-                                @"CREATE TABLE IF NOT EXISTS Timetable (
-                                        TimetableID INTEGER PRIMARY KEY AUTOINCREMENT,
-                                        RoomID INTEGER,
-                                        SubjectID INTEGER,
-                                        Date TEXT NOT NULL,
-                                        Time TEXT NOT NULL,
-                                        FOREIGN KEY (RoomID) REFERENCES Rooms(RoomID),
-                                        FOREIGN KEY (SubjectID) REFERENCES Subjects(SubjectID)
+                           @"  CREATE TABLE IF NOT EXISTS Timetable (
+                                TimetableID INTEGER PRIMARY KEY AUTOINCREMENT,
+                                RoomID INTEGER,
+                                SubjectID INTEGER,
+                                Date TEXT NOT NULL,
+                                Time TEXT NOT NULL,
+                                FOREIGN KEY (RoomID) REFERENCES Rooms(RoomID),
+                                FOREIGN KEY (SubjectID) REFERENCES Subjects(SubjectID)
+                            );",
 
-                       );",
+                     @"CREATE TABLE  IF NOT EXISTS Roles (
+                            RoleID INTEGER PRIMARY KEY AUTOINCREMENT,
+                            RoleName TEXT NOT NULL
+                      );",
+
+
+
+                @"CREATE TABLE  IF NOT EXISTS Roles (
+                        RoleID INTEGER PRIMARY KEY AUTOINCREMENT,
+                        RoleName TEXT NOT NULL
+                    );"
+
+
 
 
             };

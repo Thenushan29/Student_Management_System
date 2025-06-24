@@ -10,21 +10,12 @@ using System.Windows.Forms;
 
 namespace Student_Management_System.View
 {
-    public partial class SubjectForm : Form
+    public partial class StudentCreateForm : Form
     {
-        public SubjectForm()
+        public StudentCreateForm()
         {
             InitializeComponent();
-        }
-
-        private void lblCourse_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAddSubject_Click(object sender, EventArgs e)
-        {
-
+           
         }
     }
 }

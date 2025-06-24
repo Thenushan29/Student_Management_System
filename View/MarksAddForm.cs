@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Student_Management_System.View
 {
-    public partial class btnAddMarks : Form
+    public partial class MarksAddForm : Form
     {
-        public btnAddMarks()
+        public MarksAddForm()
         {
             InitializeComponent();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
