@@ -17,5 +17,10 @@ namespace Student_Management_System.View
             InitializeComponent();
            
         }
+
+        private void btnAddstudent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

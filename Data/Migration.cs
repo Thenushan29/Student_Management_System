@@ -60,8 +60,7 @@ namespace Student_Management_System.Data
                     );"
                 ,
 
-                    @"INSERT INTO Admins (AdminName, UserName, Password, PhoneNumber, Address)
-                    VALUES ('Admin One', 'admin', 'admin123', '1234567890', 'Admin Address');",
+                  
 
 
                 @"CREATE TABLE IF NOT EXISTS Staffs (
